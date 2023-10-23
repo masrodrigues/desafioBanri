@@ -19,7 +19,7 @@ public class Waits {
 
     public WebElement visibilityOfElement(By by){
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
         return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }

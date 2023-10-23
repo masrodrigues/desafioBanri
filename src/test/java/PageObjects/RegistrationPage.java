@@ -8,7 +8,8 @@ import org.openqa.selenium.WebElement;
 public class RegistrationPage {
 
     private WebDriver driver;
-    private Waits waits;
+    private static Waits waits;
+
 
     public RegistrationPage(WebDriver driver){
         this.driver = driver;
@@ -29,8 +30,8 @@ public class RegistrationPage {
     public WebElement passwordConfirmation(){
         return waits.visibilityOfElement(By.cssSelector(".login__password:nth-child(5) .input__default"));
     }
-    public WebElement accountBalance(){
-        return waits.visibilityOfElement(By.cssSelector(".styles__Span-sc-1pngcbh-2"));
+    public WebElement accountBalanceButton(){
+        return driver.findElement(By.xpath("//div//label//label[@id='toggleAddBalance']"));
     }
     public WebElement registerButton(){
         return waits.visibilityOfElement(By.cssSelector(".CMabB"));
@@ -38,4 +39,9 @@ public class RegistrationPage {
     public WebElement getBackLogin(){
         return waits.visibilityOfElement(By.id("btnBackButton"));
     }
+
+    public static WebElement getcreateaccont(){return waits.visibilityOfElement(By.id("modalText"));}
+
+    public static WebElement getCloseAccont(){return waits.visibilityOfElement(By.id("btnCloseModal"));}
+
 }

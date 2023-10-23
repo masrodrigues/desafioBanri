@@ -2,6 +2,7 @@ package Framework;
 
 import Framework.Browser.DriverManager;
 import Framework.Browser.TypeBrowser;
+import Framework.Report.Report;
 import Framework.Utils.FilesOperation;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,7 +17,9 @@ public class TestBase extends DriverManager {
     private static FilesOperation filesOperation = new FilesOperation();
 
 
-
+    public class Configuracao {
+        public static boolean deveFecharDriver = true;
+    }
     public static WebDriver getDriver(){
         driver = getDriver(TypeBrowser.CHROME);
         return driver;
@@ -29,6 +32,9 @@ public class TestBase extends DriverManager {
 
     @AfterEach
     public void finish(){
-        quitDriver();
+        Report.close();
+        if (Configuracao.deveFecharDriver) {
+            quitDriver();
+        }
     }
 }
