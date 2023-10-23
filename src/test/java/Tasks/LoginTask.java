@@ -20,13 +20,13 @@ public class LoginTask {
         loginPage.inputEmailLogin().sendKeys("marco.rodrigues@dbserver.com.br");
         loginPage.inputPasswordLogin().sendKeys("senha123");
         loginPage.buttonAccessLogin().click();
-        loginValidation.validationLoginConta1();
+
         }
     public void efetuarLoginConta2() {
         loginPage.inputEmailLogin().sendKeys("marco2.rodrigues@dbserver.com.br");
         loginPage.inputPasswordLogin().sendKeys("senha123");
         loginPage.buttonAccessLogin().click();
-        loginValidation.validationLoginConta1();
+
     }
     }
 

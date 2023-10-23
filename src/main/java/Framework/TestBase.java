@@ -17,9 +17,7 @@ public class TestBase extends DriverManager {
     private static FilesOperation filesOperation = new FilesOperation();
 
 
-    public class Configuracao {
-        public static boolean deveFecharDriver = true;
-    }
+
     public static WebDriver getDriver(){
         driver = getDriver(TypeBrowser.CHROME);
         return driver;
@@ -32,9 +30,8 @@ public class TestBase extends DriverManager {
 
     @AfterEach
     public void finish(){
-        Report.close();
-        if (Configuracao.deveFecharDriver) {
+
+            Report.close();
             quitDriver();
-        }
     }
 }

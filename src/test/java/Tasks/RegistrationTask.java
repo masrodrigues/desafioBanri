@@ -5,10 +5,16 @@ import PageObjects.LoginPage;
 import PageObjects.RegistrationPage;
 import Validations.CadastroValidation;
 import Validations.LoginValidation;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
+import java.time.Duration;
+import java.util.regex.Pattern;
 
 
 public class RegistrationTask {
@@ -18,7 +24,7 @@ public class RegistrationTask {
 
     private LoginPage loginPage;
     private LoginValidation loginValidation;
-
+    private LoginTask loginTask;
     private TransferTask transferTask;
 
 
@@ -43,6 +49,7 @@ public class RegistrationTask {
         loginPage.inputEmailLogin().sendKeys("marco.rodrigues@dbserver.com.br");
         loginPage.inputPasswordLogin().sendKeys("senha123");
         loginPage.buttonAccessLogin().click();
+        loginValidation.validationLoginConta1();
 
         WebElement contaValidada = loginPage.numberAccount();
         WebElement titularConta = loginPage.nameConta();
@@ -59,10 +66,11 @@ public class RegistrationTask {
         FilesOperation.setProperty("primeiraConta", "digitoPrimeiraconta", String.valueOf(digito));
         FilesOperation.setProperty("primeiraConta", "saldoPrimeiraConta", "R$ 1.000,00");
 
-        loginValidation.validationLoginConta1();
+        System.out.println("###################################");
         System.out.println("Cadastro Conta 1 realizado com Sucesso!");
-        System.out.println(conta + " " + "Titular" + nomeCompleto);
+        System.out.println(conta + " " + "Titular " + nomeCompleto);
         System.out.println("Saldo R$ 1.000,00");
+        System.out.println();
 
 
 
@@ -76,11 +84,12 @@ public class RegistrationTask {
         registrationPage.passwordConfirmation().sendKeys("senha123");
         registrationPage.accountBalanceButton().click();
         registrationPage.registerButton().click();
-        cadastroValidation.validationCadastroConta2();
+        cadastroValidation.validationCadastroConta1();
         registrationPage.getCloseAccont().click();
         loginPage.inputEmailLogin().sendKeys("marco2.rodrigues@dbserver.com.br");
         loginPage.inputPasswordLogin().sendKeys("senha123");
         loginPage.buttonAccessLogin().click();
+        loginValidation.validationLoginConta2();
 
         WebElement contaValidada = loginPage.numberAccount();
         WebElement titularConta = loginPage.nameConta();
@@ -96,14 +105,12 @@ public class RegistrationTask {
         FilesOperation.setProperty("segundaConta", "numeroSegundaConta", contaFormatada);
         FilesOperation.setProperty("segundaConta", "digitoSegundaconta", String.valueOf(digito));
         FilesOperation.setProperty("segundaConta", "saldoSegundaConta", "R$ 1.000,00");
-        loginValidation.validationLoginConta2();
 
-
+        System.out.println("###################################");
         System.out.println("Cadastro Conta 2 realizado com Sucesso!");
-        System.out.println(conta + " " + nomeCompleto);
-        System.out.println(conta + " " + "Titular" + nomeCompleto);
+        System.out.println(conta + " " + "Titular " + nomeCompleto);
         System.out.println("Saldo R$ 1.000,00");
-
+        System.out.println();
 
     }
 }

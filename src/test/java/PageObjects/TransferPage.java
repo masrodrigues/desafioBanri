@@ -34,7 +34,8 @@ public class TransferPage {
     }
     public WebElement transferCloseButton(){ return waits.visibilityOfElement((By.id("btnCloseModal")));}
     public WebElement transferMsgAccount(){return waits.visibilityOfElement(By.id("modalText"));}
-    public WebElement transferBtnBack(){return  waits.visibilityOfElement((By.id("transferCloseButton")));}
 
     public WebElement transferBtnExit(){return waits.visibilityOfElement(By.id("btnExit"));}
+    public WebElement transferBtnBack(){return waits.visibilityOfElement(By.id("btnBack"));}
+    public WebElement transferBtnExtrato(){return waits.visibilityOfElement(By.id("btn-EXTRATO"));}
 }

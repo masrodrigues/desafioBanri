@@ -31,6 +31,11 @@ public class TransferTask {
         transferPage.transferDescription().sendKeys("Transferência entre contas");
         transferPage.transferButton().click();
         transferValidation.validationTransferSucess();
-        transferPage.transferCloseButton();
+        transferPage.transferCloseButton().click();
+        transferPage.transferBtnBack().click();
+
+    }
+    public static  void validarDebitoTransfencia(){
+        transferPage.transferBtnExtrato().click();
     }
 }

@@ -31,7 +31,7 @@ public class RegistrationPage {
         return waits.visibilityOfElement(By.cssSelector(".login__password:nth-child(5) .input__default"));
     }
     public WebElement accountBalanceButton(){
-        return driver.findElement(By.xpath("//div//label//label[@id='toggleAddBalance']"));
+        return driver.findElement(By.xpath("//label[@id='toggleAddBalance']"));
     }
     public WebElement registerButton(){
         return waits.visibilityOfElement(By.cssSelector(".CMabB"));
