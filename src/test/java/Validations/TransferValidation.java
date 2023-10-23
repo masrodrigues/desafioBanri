@@ -19,7 +19,6 @@ public class TransferValidation {
         transferPage = new TransferPage(this.driver);
     }
 
-
     public void validationTransferSucess() {
         try {
 
@@ -30,6 +29,17 @@ public class TransferValidation {
 
         }catch (Exception e){
             Report.log(Status.FAIL, "Erro ao realizar a transferência - " + e.getMessage(), Screenshot.capture(driver));
+        }
+    }
+    public void validationTransferDebit() {
+        try {
+            String valorDebitoTransferencia = transferPage.transferValueDebit().getText();
+            String valorEsperado = "R$ 500,00"; // Ajuste de acordo com o formato exibido no elemento
+
+            Assertions.assertEquals(valorDebitoTransferencia, valorEsperado);
+            Report.log(Status.PASS, "Transferencia no valor de "+ valorEsperado + " conta Origem debitada", Screenshot.capture(driver));
+        } catch (Exception e) {
+            Report.log(Status.FAIL, "Erro ao validar o débito - " + e.getMessage(), Screenshot.capture(driver));
         }
     }
 }

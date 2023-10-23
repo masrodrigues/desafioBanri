@@ -37,5 +37,6 @@ public class TransferTask {
     }
     public static  void validarDebitoTransfencia(){
         transferPage.transferBtnExtrato().click();
+        transferValidation.validationTransferDebit();
     }
 }

@@ -75,7 +75,10 @@ public class RealizarTransferenciaEntreContas extends TestBase {
         loginTask.efetuarLoginConta2();
         transferTask.validarDebitoTransfencia();
         } catch (Exception e) {
+
         }
+        testCount++;
+
     }
     @AfterEach
     public void finish(){
