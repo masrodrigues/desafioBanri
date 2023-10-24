@@ -23,7 +23,7 @@ public class LoginTask {
 
         }
     public void efetuarLoginConta2() {
-        loginPage.inputEmailLogin().sendKeys("marco2.rodrigues@dbserver.com.br");
+        loginPage.inputEmailLogin().sendKeys("janainafernandes@gmail.com");
         loginPage.inputPasswordLogin().sendKeys("senha123");
         loginPage.buttonAccessLogin().click();
 

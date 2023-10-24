@@ -56,6 +56,7 @@ public class RegistrationTask {
         String nomeTitular = titularConta.getText();
         String[] partes = nomeTitular.split(" ");
         String nomeCompleto = partes[1];
+        String sobreNome = partes[2];
         String conta = contaValidada.getText();
         char digito = conta.charAt(conta.length() - 1);
         String contaSemDigito = conta.replaceAll("[^0-9]", "");
@@ -68,7 +69,7 @@ public class RegistrationTask {
 
         System.out.println("###################################");
         System.out.println("Cadastro Conta 1 realizado com Sucesso!");
-        System.out.println(conta + " " + "Titular " + nomeCompleto);
+        System.out.println(conta + " " + "Titular " + nomeCompleto + " " + sobreNome);
         System.out.println("Saldo R$ 1.000,00");
         System.out.println();
 
@@ -78,15 +79,15 @@ public class RegistrationTask {
     }
     public void efetuarCadastroConta2() throws IOException {
         registrationPage.clickRegisterButton().click();
-        registrationPage.inputEmail().sendKeys("marco2.rodrigues@dbserver.com.br");
-        registrationPage.inputName().sendKeys("Marco2 Rodrigues");
+        registrationPage.inputEmail().sendKeys("janainafernandes@gmail.com");
+        registrationPage.inputName().sendKeys("Janaina Fernandes");
         registrationPage.inputPassword().sendKeys("senha123");
         registrationPage.passwordConfirmation().sendKeys("senha123");
         registrationPage.accountBalanceButton().click();
         registrationPage.registerButton().click();
         cadastroValidation.validationCadastroConta1();
         registrationPage.getCloseAccont().click();
-        loginPage.inputEmailLogin().sendKeys("marco2.rodrigues@dbserver.com.br");
+        loginPage.inputEmailLogin().sendKeys("janainafernandes@gmail.com");
         loginPage.inputPasswordLogin().sendKeys("senha123");
         loginPage.buttonAccessLogin().click();
         loginValidation.validationLoginConta2();
@@ -96,6 +97,7 @@ public class RegistrationTask {
         String nomeTitular = titularConta.getText();
         String[] partes = nomeTitular.split(" ");
         String nomeCompleto = partes[1];
+        String sobreNome = partes[2];
         String conta = contaValidada.getText();
         char digito = conta.charAt(conta.length() - 1);
         String contaSemDigito = conta.replaceAll("[^0-9]", "");
@@ -108,7 +110,7 @@ public class RegistrationTask {
 
         System.out.println("###################################");
         System.out.println("Cadastro Conta 2 realizado com Sucesso!");
-        System.out.println(conta + " " + "Titular " + nomeCompleto);
+        System.out.println(conta + " " + "Titular " + nomeCompleto + " " + sobreNome);
         System.out.println("Saldo R$ 1.000,00");
         System.out.println();
 

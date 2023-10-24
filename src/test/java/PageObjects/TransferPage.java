@@ -38,5 +38,5 @@ public class TransferPage {
     public WebElement transferBtnExit(){return waits.visibilityOfElement(By.id("btnExit"));}
     public WebElement transferBtnBack(){return waits.visibilityOfElement(By.id("btnBack"));}
     public WebElement transferBtnExtrato(){return waits.visibilityOfElement(By.id("btn-EXTRATO"));}
-    public WebElement transferValueDebit(){return waits.visibilityOfElement(By.id("textBalanceAvailable"));}
+    public WebElement transferValueBalance(){return waits.visibilityOfElement(By.id("textBalanceAvailable"));}
 }

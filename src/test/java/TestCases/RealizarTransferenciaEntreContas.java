@@ -66,24 +66,39 @@ public class RealizarTransferenciaEntreContas extends TestBase {
         }
         testCount++;
     }
-
     @Test
     @Order(4)
-    public void ValidarExtratoDebito() {
+    public void ValidarExtratoCredito() {
 
         try {
-        loginTask.efetuarLoginConta2();
-        transferTask.validarDebitoTransfencia();
+            Report.createTest("Validar crédito após transferência", ReportType.SINGLE);
+            loginTask.efetuarLoginConta1();
+            transferTask.validarCreditoTransferencia();
         } catch (Exception e) {
-
+            Report.log(Status.FAIL, e.getMessage(), Screenshot.capture(driver));
         }
         testCount++;
 
     }
+    @Test
+    @Order(5)
+    public void ValidarExtratoDebito() {
+
+        try {
+            Report.createTest("Validar débito após transferência", ReportType.SINGLE);
+            loginTask.efetuarLoginConta2();
+            transferTask.validarDebitoTransfencia();
+        } catch (Exception e) {
+            Report.log(Status.FAIL, e.getMessage(), Screenshot.capture(driver));
+        }
+            testCount++;
+
+    }
+
     @AfterEach
     public void finish(){
         // Se todos os testes foram executados, então feche o driver
-        if (testCount == 4) {
+        if (testCount == 5) {
             quitDriver();
         }
         Report.close();
