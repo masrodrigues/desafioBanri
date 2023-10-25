@@ -1,6 +1,5 @@
 package Validations;
 
-
 import Framework.Browser.Waits;
 import Framework.Report.Report;
 import Framework.Report.Screenshot;

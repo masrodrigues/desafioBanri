@@ -1,5 +1,7 @@
 package TestCases;
 
+import Validations.CadastroValidation;
+import org.junit.jupiter.api.Assertions;
 import Framework.Report.Report;
 import Framework.Report.ReportType;
 import Framework.Report.Screenshot;
@@ -11,7 +13,6 @@ import Validations.LoginValidation;
 import com.aventstack.extentreports.Status;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 
@@ -19,6 +20,7 @@ public class RealizarTransferenciaEntreContas extends TestBase {
     private WebDriver driver = this.getDriver();
     private static int testCount = 0;
     RegistrationTask registrationTask = new RegistrationTask(driver);
+    CadastroValidation cadastroValidation = new CadastroValidation(driver);
     LoginValidation loginValidation = new LoginValidation(driver);
     LoginTask loginTask = new LoginTask(driver);
     TransferTask transferTask = new TransferTask(driver);
@@ -32,6 +34,7 @@ public class RealizarTransferenciaEntreContas extends TestBase {
         try {
             Report.createTest("Realizar Cadastro conta 1 com sucesso", ReportType.SINGLE);
             registrationTask.efetuarCadastroConta1();
+            cadastroValidation.validationCadastroConta1();
             loginValidation.validationLoginConta1();
 
 
@@ -50,6 +53,7 @@ public class RealizarTransferenciaEntreContas extends TestBase {
         try {
             Report.createTest("Realizar Cadastro conta 2 com sucesso", ReportType.SINGLE);
             registrationTask.efetuarCadastroConta2();
+            cadastroValidation.validationCadastroConta2();
             loginValidation.validationLoginConta2();
         } catch (Exception e) {
 
@@ -104,7 +108,6 @@ public class RealizarTransferenciaEntreContas extends TestBase {
 
     @AfterEach
     public void finish() {
-        // Se todos os testes foram executados, então feche o driver
         if (testCount == 5) {
             quitDriver();
         }

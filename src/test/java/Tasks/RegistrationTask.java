@@ -1,19 +1,18 @@
 package Tasks;
 
+import org.junit.jupiter.api.Assertions;
 import Framework.Utils.FilesOperation;
 import PageObjects.LoginPage;
 import PageObjects.RegistrationPage;
 import PageObjects.TransferPage;
 import Validations.CadastroValidation;
 import Validations.LoginValidation;
-import org.junit.Assert;
-import org.openqa.selenium.By;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.*;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 
 import java.io.IOException;
-import java.util.regex.Pattern;
 
 
 public class RegistrationTask {
@@ -47,15 +46,11 @@ public class RegistrationTask {
         Thread.sleep(3000);
         registrationPage.registrationAccountBalanceButton().click();
         registrationPage.registrationRegisterButton().click();
-        cadastroValidation.validationCadastroConta1();
         registrationPage.registrationGetCloseAccount().click();
-
         loginPage.loginInputEmail().sendKeys("marco.rodrigues@dbserver.com.br");
         loginPage.loginInputPassword().sendKeys("senha123");
         loginPage.loginButtonAccess().click();
-
         String saldo = transferPage.transferValuePrincipal().getText();
-
 
         WebElement contaValidada = loginPage.loginNumberAccount();
         WebElement titularConta = loginPage.loginNameConta();
@@ -93,13 +88,10 @@ public class RegistrationTask {
         Thread.sleep(3000);
         registrationPage.registrationAccountBalanceButton().click();
         registrationPage.registrationRegisterButton().click();
-        cadastroValidation.validationCadastroConta1();
         registrationPage.registrationGetCloseAccount().click();
-
         loginPage.loginInputEmail().sendKeys("janainafernandes@gmail.com");
         loginPage.loginInputPassword().sendKeys("senha123");
         loginPage.loginButtonAccess().click();
-
         String saldo = transferPage.transferValuePrincipal().getText();
 
         WebElement contaValidada = loginPage.loginNumberAccount();

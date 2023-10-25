@@ -19,7 +19,7 @@ public class TransferPage {
     }
 
     public WebElement transferInputDigit() {
-        return waits.visibilityOfElement(By.cssSelector(".account__data > .style__ContainerFieldInput-sc-s3e9ea-0:nth-child(2) > .input__default"));
+        return waits.visibilityOfElement(By.xpath("//input[@name='digit']"));
     }
 
     public WebElement transferValue() {

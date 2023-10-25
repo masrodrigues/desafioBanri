@@ -22,9 +22,8 @@ public class CadastroValidation {
     public void validationCadastroConta1() {
         try {
 
-            String msgContaCriadaSucesso = RegistrationPage.registrationGetCreateAccount().getText();
+            String msgContaCriadaSucesso = registrationPage.registrationGetCreateAccount().getText();
             String msgEsperada = "foi criada com sucesso";
-
             Assertions.assertTrue(msgContaCriadaSucesso.contains(msgEsperada), "A mensagem de criação de conta não esta presente");
             Report.log(Status.PASS, "Cadastro da conta 1 realizado com sucesso", Screenshot.capture(driver));
 
@@ -38,7 +37,6 @@ public class CadastroValidation {
 
             String msgContaCriadaSucesso = RegistrationPage.registrationGetCreateAccount().getText();
             String msgEsperada = "foi criada com sucesso";
-
             Assertions.assertTrue(msgContaCriadaSucesso.contains(msgEsperada), "A mensagem de criação de conta não esta presente");
             Report.log(Status.PASS, "Cadastro da conta 2 realizado com sucesso", Screenshot.capture(driver));
 

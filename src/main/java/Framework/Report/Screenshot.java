@@ -2,26 +2,14 @@ package Framework.Report;
 
 import Framework.Utils.CreateFolder;
 import Framework.Utils.DateTime;
-import com.assertthat.selenium_shutterbug.core.PageSnapshot;
-import com.assertthat.selenium_shutterbug.core.Shutterbug;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.model.Media;
-
 import org.apache.commons.io.FileUtils;
-
-
-import org.bouncycastle.mime.encoding.Base64OutputStream;
-import org.bouncycastle.util.encoders.Base64;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-import javax.imageio.ImageIO;
-import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.IOException;
-
-import java.util.stream.Stream;
 
 public class Screenshot {
 

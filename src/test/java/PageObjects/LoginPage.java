@@ -1,7 +1,6 @@
 package PageObjects;
 
 import Framework.Browser.Waits;
-import com.fasterxml.jackson.core.JsonParser;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,7 +15,7 @@ public class LoginPage {
     }
 
     public WebElement loginInputEmail() {
-        return waits.visibilityOfElement(By.cssSelector(".style__ContainerFormLogin-sc-1wbjw6k-0 > .style__ContainerFieldInput-sc-s3e9ea-0 > .input__default"));
+        return waits.visibilityOfElement(By.xpath("//input[@name='email']"));
     }
 
     public WebElement loginInputPassword() {

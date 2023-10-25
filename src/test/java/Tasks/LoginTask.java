@@ -3,9 +3,6 @@ package Tasks;
 import PageObjects.LoginPage;
 import Validations.LoginValidation;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class LoginTask {
     private WebDriver driver;
