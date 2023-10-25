@@ -34,7 +34,7 @@ public class RealizarTransferenciaEntreContas extends TestBase {
         try {
             Report.createTest("Realizar Cadastro conta 1 com sucesso", ReportType.SINGLE);
             registrationTask.efetuarCadastroConta1();
-            cadastroValidation.validationCadastroConta1();
+
             loginValidation.validationLoginConta1();
 
 
@@ -53,7 +53,7 @@ public class RealizarTransferenciaEntreContas extends TestBase {
         try {
             Report.createTest("Realizar Cadastro conta 2 com sucesso", ReportType.SINGLE);
             registrationTask.efetuarCadastroConta2();
-            cadastroValidation.validationCadastroConta2();
+
             loginValidation.validationLoginConta2();
         } catch (Exception e) {
 

@@ -1,4 +1,4 @@
-# <img src="https://imgur.com/MlNEHC2.png" width="110" alt="BugBank" style="vertical-align: middle;"> Desafio BugBank.
+# <img src="https://imgur.com/XbL3Tk1.png" width="110" alt="BugBank" style="vertical-align: middle;"> Desafio BugBank.
 ## Objetivo do teste
 Desenvolver testes automatizados para simular o processo do cadastro de duas contas com saldo no site do Banco BugBank, acessar uma das contas e realizar uma transferência de valor para a outra. Em seguida, valide as operações de saída e entrada de fundos nas contas envolvidas no processo.
 

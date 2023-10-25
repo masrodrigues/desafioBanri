@@ -38,7 +38,7 @@ public class TransferValidation {
             String valorEsperado = "R$ 150,00";
 
             Assertions.assertEquals(valorDebitoTransferencia, valorEsperado);
-            Report.log(Status.PASS, "Transferencia debitada no valor de " + valorEsperado + " conta Origem", Screenshot.capture(driver));
+            Report.log(Status.PASS, "Saldo Atualizado após débito " + valorEsperado + " conta Origem", Screenshot.capture(driver));
         } catch (Exception e) {
             Report.log(Status.FAIL, "Erro ao validar o débito - " + e.getMessage(), Screenshot.capture(driver));
         }
@@ -50,7 +50,7 @@ public class TransferValidation {
             String valorEsperado = "R$ 1.850,00";
 
             Assertions.assertEquals(valorDebitoTransferencia, valorEsperado);
-            Report.log(Status.PASS, "Transferencia creditada no valor de " + valorEsperado + " conta destino", Screenshot.capture(driver));
+            Report.log(Status.PASS, "Saldo Atualizado após crédito " + valorEsperado + " conta destino", Screenshot.capture(driver));
         } catch (Exception e) {
             Report.log(Status.FAIL, "Erro ao validar o crédito - " + e.getMessage(), Screenshot.capture(driver));
         }

@@ -46,7 +46,9 @@ public class RegistrationTask {
         Thread.sleep(3000);
         registrationPage.registrationAccountBalanceButton().click();
         registrationPage.registrationRegisterButton().click();
+        cadastroValidation.validationCadastroConta1();
         registrationPage.registrationGetCloseAccount().click();
+
         loginPage.loginInputEmail().sendKeys("marco.rodrigues@dbserver.com.br");
         loginPage.loginInputPassword().sendKeys("senha123");
         loginPage.loginButtonAccess().click();
@@ -88,7 +90,9 @@ public class RegistrationTask {
         Thread.sleep(3000);
         registrationPage.registrationAccountBalanceButton().click();
         registrationPage.registrationRegisterButton().click();
+        cadastroValidation.validationCadastroConta2();
         registrationPage.registrationGetCloseAccount().click();
+
         loginPage.loginInputEmail().sendKeys("janainafernandes@gmail.com");
         loginPage.loginInputPassword().sendKeys("senha123");
         loginPage.loginButtonAccess().click();
