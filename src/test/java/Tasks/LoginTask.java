@@ -11,23 +11,27 @@ public class LoginTask {
     private WebDriver driver;
     private LoginPage loginPage;
     private LoginValidation loginValidation;
-    public LoginTask(WebDriver driver){
+
+    public LoginTask(WebDriver driver) {
         this.driver = driver;
         loginPage = new LoginPage(this.driver);
         loginValidation = new LoginValidation(this.driver);
     }
     public void efetuarLoginConta1() {
-        loginPage.inputEmailLogin().sendKeys("marco.rodrigues@dbserver.com.br");
-        loginPage.inputPasswordLogin().sendKeys("senha123");
-        loginPage.buttonAccessLogin().click();
 
-        }
+        loginPage.loginInputEmail().sendKeys("marco.rodrigues@dbserver.com.br");
+        loginPage.loginInputPassword().sendKeys("senha123");
+        loginPage.loginButtonAccess().click();
+
+    }
     public void efetuarLoginConta2() {
-        loginPage.inputEmailLogin().sendKeys("janainafernandes@gmail.com");
-        loginPage.inputPasswordLogin().sendKeys("senha123");
-        loginPage.buttonAccessLogin().click();
+
+        loginPage.loginInputEmail().sendKeys("janainafernandes@gmail.com");
+        loginPage.loginInputPassword().sendKeys("senha123");
+        loginPage.loginButtonAccess().click();
+
 
     }
-    }
+}
 
 

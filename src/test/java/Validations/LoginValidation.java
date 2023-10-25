@@ -11,9 +11,9 @@ import org.openqa.selenium.WebDriver;
 public class LoginValidation {
     private WebDriver driver;
     private LoginPage loginPage;
-
     private Waits waits;
-    public  LoginValidation(WebDriver driver){
+
+    public LoginValidation(WebDriver driver) {
         this.driver = driver;
         loginPage = new LoginPage(this.driver);
     }
@@ -21,24 +21,25 @@ public class LoginValidation {
     public void validationLoginConta1() {
         try {
 
-            boolean msgContaLoginSucesso = LoginPage.sairLogin().isDisplayed();
+            boolean msgContaLoginSucesso = LoginPage.loginSairLogin().isDisplayed();
 
             Assertions.assertTrue(msgContaLoginSucesso, "Obrigado por escolher o nosso banco");
             Report.log(Status.PASS, "Login conta 1 realizado com sucesso", Screenshot.capture(driver));
 
-        }catch (Exception e){
+        } catch (Exception e) {
             Report.log(Status.FAIL, "Erro ao realizar login da conta - " + e.getMessage(), Screenshot.capture(driver));
         }
     }
+
     public void validationLoginConta2() {
         try {
 
-            boolean msgContaLoginSucesso = LoginPage.sairLogin().isDisplayed();
+            boolean msgContaLoginSucesso = LoginPage.loginSairLogin().isDisplayed();
 
             Assertions.assertTrue(msgContaLoginSucesso, "Obrigado por escolher o nosso banco");
             Report.log(Status.PASS, "Login conta 2 realizado com sucesso", Screenshot.capture(driver));
 
-        }catch (Exception e){
+        } catch (Exception e) {
             Report.log(Status.FAIL, "Erro ao realizar login da conta - " + e.getMessage(), Screenshot.capture(driver));
         }
     }

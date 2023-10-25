@@ -14,29 +14,55 @@ public class TransferPage {
         waits = new Waits(this.driver);
     }
 
-    public WebElement transferInputAccount(){
+    public WebElement transferInputAccount() {
         return waits.visibilityOfElement(By.xpath("//input[@name='accountNumber']"));
     }
-    public WebElement transferInputDigit(){
+
+    public WebElement transferInputDigit() {
         return waits.visibilityOfElement(By.cssSelector(".account__data > .style__ContainerFieldInput-sc-s3e9ea-0:nth-child(2) > .input__default"));
     }
-    public WebElement transferValue(){
+
+    public WebElement transferValue() {
         return waits.visibilityOfElement(By.xpath("//input[@name='transferValue']"));
     }
-    public WebElement transferDescription(){
+
+    public WebElement transferDescription() {
         return waits.visibilityOfElement(By.xpath("//input[@name='description']"));
     }
-    public WebElement transferButton(){
+
+    public WebElement transferButton() {
         return waits.visibilityOfElement(By.xpath("//button[@type='submit']"));
     }
-    public WebElement transferOpenButton(){
+
+    public WebElement transferOpenButton() {
         return waits.visibilityOfElement((By.id("btn-TRANSFERÊNCIA")));
     }
-    public WebElement transferCloseButton(){ return waits.visibilityOfElement((By.id("btnCloseModal")));}
-    public WebElement transferMsgAccount(){return waits.visibilityOfElement(By.id("modalText"));}
 
-    public WebElement transferBtnExit(){return waits.visibilityOfElement(By.id("btnExit"));}
-    public WebElement transferBtnBack(){return waits.visibilityOfElement(By.id("btnBack"));}
-    public WebElement transferBtnExtrato(){return waits.visibilityOfElement(By.id("btn-EXTRATO"));}
-    public WebElement transferValueBalance(){return waits.visibilityOfElement(By.id("textBalanceAvailable"));}
+    public WebElement transferCloseButton() {
+        return waits.visibilityOfElement((By.id("btnCloseModal")));
+    }
+
+    public WebElement transferMsgAccount() {
+        return waits.visibilityOfElement(By.id("modalText"));
+    }
+
+    public WebElement transferBtnExit() {
+        return waits.visibilityOfElement(By.id("btnExit"));
+    }
+
+    public WebElement transferBtnBack() {
+        return waits.visibilityOfElement(By.id("btnBack"));
+    }
+
+    public WebElement transferBtnExtrato() {
+        return waits.visibilityOfElement(By.id("btn-EXTRATO"));
+    }
+
+    public WebElement transferValueBalance() {
+        return waits.visibilityOfElement(By.id("textBalanceAvailable"));
+    }
+
+    public WebElement transferValuePrincipal() {
+        return waits.visibilityOfElement(By.id("textBalance"));
+    }
 }

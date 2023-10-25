@@ -1,48 +1,78 @@
-# Desafio BugBanck.
-Os sub tópicos abaixo descrevem algumas decisões tomadas na estruturação do projeto.
+# <img src="https://imgur.com/MlNEHC2.png" width="110" alt="BugBank" style="vertical-align: middle;"> Desafio BugBanck.
+## Objetivo do teste
+Desenvolver testes automatizados para simular o processo d0 cadastro de duas contas com saldo no site do Banco BugBank, acessar uma das contas e realizar uma transferência de valor para a outra. Em seguida, valide as operações de saída e entrada de fundos nas contas envolvidas no processo.
 
-## Tecnologia Utilizadas
+## Plano de testes
+| ID  | Cenário de Teste                      | Etapas do Teste                                               | Resultado Esperado                                        |
+|-----|---------------------------------------|---------------------------------------------------------------|-----------------------------------------------------------|
+| 1   | Cadastro da Conta 1                   | 1. Acessar o site do BugBank                                  | Sucesso: Página de Login é exibida                        |
+|     |                                       | 2. Clicar no botão "Registrar"                                | Sucesso: Página de Registro é exibida                     |
+|     |                                       | 3. Preencher o formulário de registro com dados válidos       | Sucesso: Conta 1 é criada com mensagem de sucesso exibida |
+| 2   | Cadastro da Conta 2                   | 1. Acessar o site do BugBank                                  | Sucesso: Página de Login é exibida                        |
+|     |                                       | 2. Clicar no botão "Registrar"                                | Sucesso: Página de Registro é exibida                     |
+|     |                                       | 3. Preencher o formulário de registro com dados válidos       | Sucesso: Conta 2 é criada com mensagem de sucesso exibida |
+| 3   | Acesso à Conta 1                      | 1. Acessar o site do BugBank                                  | Sucesso: Página de Login é exibida                        |
+|     |                                       | 2. Inserir credenciais da Conta 1 (autenticar)                | Sucesso: Conta 1 é autenticada com sucesso                |
+| 4   | Acesso à Conta 2                      | 1. Acessar o site do BugBank                                  | Sucesso: Página de Login é exibida                        |
+|     |                                       | 2. Inserir credenciais da Conta 2 (autenticar)                | Sucesso: Conta 2 é autenticada com sucesso                |
+| 5   | Transferência da Conta 2 para Conta 1 | 1. Acessar a página de transferência                          | Sucesso: Página de transferência é exibida                |
+|     |                                       | 2. Preencher o valor da transferência com o valor desejado    | Sucesso: Valor é preenchido                               |
+|     |                                       | 3. Selecionar Conta 1 como conta de destino                   | Sucesso: Conta 1 é selecionada                            |
+|     |                                       | 4. Confirmar a transferência                                  | Sucesso: Transferência é realizada com sucesso            |
+| 6   | Validação do Saldo da Conta 1         | 1. Acessar a página de detalhes da Conta 1                    | Sucesso: Página de detalhes é exibida                     |
+|     |                                       | 2. Verificar saldo da Conta 1 (deve refletir a transferência) | Sucesso: Saldo correto exibido                            |
+| 7   | Validação do Saldo da Conta 2         | 1. Acessar a página de detalhes da Conta 2                    | Sucesso: Página de detalhes é exibida                     |
+|     |                                       | 2. Verificar saldo da Conta 2 (deve refletir a transferência) | Sucesso: Saldo correto exibido                            |
 
-- Java  https://www.oracle.com/java/technologies/javase/jdk14-archive-downloads.html
-- Selenium Web Driver
-  https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
-- Maven  https://maven.apache.org/
-- Criar Readme   https://stackedit.io/
-- ChromeDriver - WebDriver 
+## Relatório de evidências
+Relatório gerado a cada execução de testes, que permite criar relatórios em HTML.Localizado na pasta Report do
+projeto juntamente com screenshots de cada evidência de teste.
+<p align="center"> <img src="https://imgur.com/oIOhJj2.png" min-width="100px" max-width="140px"> </p>
 
-##	Configurações de pastas do projeto:
+## Tecnologias Utilizadas / Frameworks / Bibliotecas
+<div>
+    <img src="https://imgur.com/NZjgS4y.png" width="40" alt="Node" style="vertical-align: middle;">
+    <span style="vertical-align: middle;">IntelliJ IDEA 2022.3.2</span>
+</div>
+<p></p>
+<div>
+    <img src="https://imgur.com/T6vRl2Q.png" width="40" alt="Node" style="vertical-align: middle;">
+<a href="https://www.selenium.dev/" style="vertical-align: middle;">Selenium - https://www.selenium.dev/</a>
+</div>
+<p></p>
+<div>
+    <img src="https://imgur.com/XGHJsjR.png" width="40" alt="Node" style="vertical-align: middle;">
+    <a href="https://www.java.com/pt-BR/" style="vertical-align: middle;">Java JDK21 - https://www.selenium.dev/</a>
+</div>
+<p></p>
+<div>
+    <img src="https://imgur.com/EnDOYZt.png" width="40" alt="Node" style="vertical-align: middle;">
+    <a href="https://junit.org/junit5/" style="vertical-align: middle;">JUnit5 - https://www.selenium.dev/</a>
+</div>
+<p></p>
+<div>
+    <img src="https://imgur.com/kn0WGKY.png" width="40" alt="Node" style="vertical-align: middle;">
+    <a href="https://www.extentreports.com/" style="vertical-align: middle;">Extent Report - https://www.selenium.dev/</a>
+</div>
 
-##  Folder project:
-- A pasta **src** tem a seguinte estrutura informada, **main** --> **java** --> **Framework**, encontram-se as funções para abrir o site BugBank, navegar e waits informada no enunciado do desafio.
 
-- A pasta **src** tem a seguinte estrutura informada, **main** --> **java** --> **resources** --> **Properties**, encontram-se os valores das contas criadas no momento da executação.
 
-- A pasta **src** tem a seguinte estrutura informada, **test** --> **java** --> **PageObjects**, **Tasks**, **TestCases**, **TestSuites**, **Validations** mesma estrutura informado no enunciado do desafio.
 
-## POM dependecy:
-- Adicionar no pom.xml dependecy.
-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
+##	Executando o projeto:
+ - Executar o git - comando Git Bash here
+ - Clonar o projeto - comando git clone https://github.com/masrodrigues/desafioBanri.git
+ - Abrir o projeto no Intellij
+ - Atualizar dependências com Maven (Reload all Maven Project)
+ - Executar TestCase - RealizarTransferenciasEntreContas (Shift+f10)
 
-## Testes Automatizados
-Testes automatizados para simular o cadastro de duas contas, com saldo no link: https://bugbank.netlify.app/ do banco BugBank, acessar uma conta e realizar uma transferência de valor para outra. Validar a saída e entrada das contas envolvidas.
 
-## Observação
-- O saldo atual das contas sera exibido no momento da execução.
-- Para clonar o projeto BugBank em seu computador e executar, realize estes passos abaixo :
-- - Open Git Bash here
-- - Digitar: git clone https://github.com/francisgobbi/DesafioBugBank.git
-- - Projeto sera clonado no seu computador.
-- Para executar o projeto, realize estes passo :
-- - Maven no IntelliJ
-- - Reload all Maven Project
-- - Executar a funcão na pasta **src** -> **test** -> **TestCases** -->  **RealizarTrasnferenciaEntreContas**
+## Dependências utilizadas - arquivo pom.xml:
 
-- Caso não conseguir executar o projeto com sucesso, realize os passos abaixo:
-- - mvn clean
-- - mvn install
+- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java/4.14.1
+- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api/5.10.0
+- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager/5.5.3
+- https://mvnrepository.com/artifact/com.aventstack/extentreports/5.1.1
+- https://mvnrepository.com/artifact/com.assertthat/selenium-shutterbug/1.6
 
-## Notas Gerais
-- BeforeEach e AfterEach (Itens comuns a todos)
-- Design Patterns chamado page objetos. Foi criado classes específicas para cada página que você tem na aplicação. Para resolver um problema de reaproveitamento de código.
-- Primeiro princípio do PageObject. Tenha um atributo da classe que seja WebDrive.
-- Segundo tenha um construtor que recebe o estado atual do seu navegador de fora e jogue pra dentro deste navegador. Métodos de interação com cada método da tela. Fluente Page. 
+
+

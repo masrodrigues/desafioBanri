@@ -12,11 +12,13 @@ public class TransferTask {
     private static TransferPage transferPage;
     private RegistrationTask registrationTask;
     private static TransferValidation transferValidation;
-    public TransferTask(WebDriver driver){
+
+    public TransferTask(WebDriver driver) {
         this.driver = driver;
         transferPage = new TransferPage(this.driver);
         transferValidation = new TransferValidation(this.driver);
     }
+
     public static void realizarTransferenciaEntreContas() throws IOException {
         String contaFormatada = null;
         String digito = null;
@@ -42,10 +44,11 @@ public class TransferTask {
 
         System.out.println("#######################################");
         System.out.println("Tranferencia no valor de R$ 850,00");
-        System.out.println("Realizada da conta origem " + contaFormatada2 + "-"+ digito2);
+        System.out.println("Realizada da conta origem " + contaFormatada2 + "-" + digito2);
         System.out.println("Para a conta destino " + contaFormatada + "-" + digito);
 
     }
+
     public static void validarCreditoTransferencia() throws IOException {
 
         String contaFormatada = null;
@@ -59,11 +62,13 @@ public class TransferTask {
         transferValidation.validationTransferCredit();
 
         System.out.println("#######################################");
-        System.out.println("Saldo Atualizado conta 1 nº " + contaFormatada + "-" + digito );
+        System.out.println("Saldo Atualizado conta 1 nº " + contaFormatada + "-" + digito);
         System.out.println(saldo);
+        System.out.println();
 
     }
-    public static  void validarDebitoTransfencia() throws IOException {
+
+    public static void validarDebitoTransfencia() throws IOException {
 
         String contaFormatada2 = null;
         String digito2 = null;
@@ -76,8 +81,9 @@ public class TransferTask {
         transferValidation.validationTransferDebit();
 
         System.out.println("#######################################");
-        System.out.println("Saldo restande conta 2 nº " + contaFormatada2+ "-" + digito2 );
+        System.out.println("Saldo restande conta 2 nº " + contaFormatada2 + "-" + digito2);
         System.out.println(saldo);
+        System.out.println();
     }
 
 }

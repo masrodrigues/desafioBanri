@@ -14,7 +14,8 @@ public class TransferValidation {
     private TransferPage transferPage;
 
     private Waits waits;
-    public  TransferValidation(WebDriver driver){
+
+    public TransferValidation(WebDriver driver) {
         this.driver = driver;
         transferPage = new TransferPage(this.driver);
     }
@@ -27,28 +28,30 @@ public class TransferValidation {
             Assertions.assertTrue(msgTranferenciaRealizadaSucesso, "Transferencia realizada com sucesso");
             Report.log(Status.PASS, "Transferencia realizada com sucesso", Screenshot.capture(driver));
 
-        }catch (Exception e){
+        } catch (Exception e) {
             Report.log(Status.FAIL, "Erro ao realizar a transferência - " + e.getMessage(), Screenshot.capture(driver));
         }
     }
+
     public void validationTransferDebit() {
         try {
             String valorDebitoTransferencia = transferPage.transferValueBalance().getText();
             String valorEsperado = "R$ 150,00";
 
             Assertions.assertEquals(valorDebitoTransferencia, valorEsperado);
-            Report.log(Status.PASS, "Transferencia debitada no valor de "+ valorEsperado + " conta Origem", Screenshot.capture(driver));
+            Report.log(Status.PASS, "Transferencia debitada no valor de " + valorEsperado + " conta Origem", Screenshot.capture(driver));
         } catch (Exception e) {
             Report.log(Status.FAIL, "Erro ao validar o débito - " + e.getMessage(), Screenshot.capture(driver));
         }
     }
+
     public void validationTransferCredit() {
         try {
             String valorDebitoTransferencia = transferPage.transferValueBalance().getText();
             String valorEsperado = "R$ 1.850,00";
 
             Assertions.assertEquals(valorDebitoTransferencia, valorEsperado);
-            Report.log(Status.PASS, "Transferencia creditada no valor de "+ valorEsperado + " conta destino", Screenshot.capture(driver));
+            Report.log(Status.PASS, "Transferencia creditada no valor de " + valorEsperado + " conta destino", Screenshot.capture(driver));
         } catch (Exception e) {
             Report.log(Status.FAIL, "Erro ao validar o crédito - " + e.getMessage(), Screenshot.capture(driver));
         }

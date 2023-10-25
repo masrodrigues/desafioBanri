@@ -7,6 +7,7 @@ import Framework.TestBase;
 import Tasks.LoginTask;
 import Tasks.RegistrationTask;
 import Tasks.TransferTask;
+import Validations.LoginValidation;
 import com.aventstack.extentreports.Status;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
@@ -16,19 +17,23 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class RealizarTransferenciaEntreContas extends TestBase {
     private WebDriver driver = this.getDriver();
-
+    private static int testCount = 0;
     RegistrationTask registrationTask = new RegistrationTask(driver);
+    LoginValidation loginValidation = new LoginValidation(driver);
     LoginTask loginTask = new LoginTask(driver);
     TransferTask transferTask = new TransferTask(driver);
-    private static int testCount = 0;
+
+
     @Test
     @Order(1)
 
-    public void efetuarCadastroConta1() {
+    public void EfetuarCadastroConta1() {
 
         try {
             Report.createTest("Realizar Cadastro conta 1 com sucesso", ReportType.SINGLE);
             registrationTask.efetuarCadastroConta1();
+            loginValidation.validationLoginConta1();
+
 
         } catch (Exception e) {
 
@@ -40,11 +45,12 @@ public class RealizarTransferenciaEntreContas extends TestBase {
 
     @Test
     @Order(2)
-    public void efetuarCadastroConta2() {
+    public void EfetuarCadastroConta2() {
 
         try {
             Report.createTest("Realizar Cadastro conta 2 com sucesso", ReportType.SINGLE);
             registrationTask.efetuarCadastroConta2();
+            loginValidation.validationLoginConta2();
         } catch (Exception e) {
 
             Report.log(Status.FAIL, e.getMessage(), Screenshot.capture(driver));
@@ -55,7 +61,7 @@ public class RealizarTransferenciaEntreContas extends TestBase {
 
     @Test
     @Order(3)
-    public void realizarTransferenciaEntreContas() {
+    public void RealizarTransferenciaEntreContas() {
 
         try {
             Report.createTest("Realizar transferência com sucesso", ReportType.SINGLE);
@@ -66,6 +72,7 @@ public class RealizarTransferenciaEntreContas extends TestBase {
         }
         testCount++;
     }
+
     @Test
     @Order(4)
     public void ValidarExtratoCredito() {
@@ -80,6 +87,7 @@ public class RealizarTransferenciaEntreContas extends TestBase {
         testCount++;
 
     }
+
     @Test
     @Order(5)
     public void ValidarExtratoDebito() {
@@ -91,12 +99,11 @@ public class RealizarTransferenciaEntreContas extends TestBase {
         } catch (Exception e) {
             Report.log(Status.FAIL, e.getMessage(), Screenshot.capture(driver));
         }
-            testCount++;
-
+        testCount++;
     }
 
     @AfterEach
-    public void finish(){
+    public void finish() {
         // Se todos os testes foram executados, então feche o driver
         if (testCount == 5) {
             quitDriver();

@@ -6,39 +6,45 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-
-
 public class LoginPage {
-
-
     private WebDriver driver;
     private static Waits waits;
-    public LoginPage(WebDriver driver){
+
+    public LoginPage(WebDriver driver) {
         this.driver = driver;
         waits = new Waits(this.driver);
     }
 
-    public WebElement inputEmailLogin() {
+    public WebElement loginInputEmail() {
         return waits.visibilityOfElement(By.cssSelector(".style__ContainerFormLogin-sc-1wbjw6k-0 > .style__ContainerFieldInput-sc-s3e9ea-0 > .input__default"));
     }
-    public WebElement inputPasswordLogin(){
+
+    public WebElement loginInputPassword() {
         return waits.visibilityOfElement(By.xpath("//input[@name='password']"));
     }
-    public WebElement buttonAccessLogin(){
+
+    public WebElement loginButtonAccess() {
         return waits.visibilityOfElement(By.xpath("//button[@type='submit']"));
     }
 
-    public static WebElement nameConta(){
+    public static WebElement loginNameConta() {
         return waits.visibilityOfElement(By.id("textName"));
-}
-    public static WebElement saudacaoInicial() {
+    }
+
+    public static WebElement loginSaudacaoInicial() {
         return waits.visibilityOfElement(By.id(".home__Footer-sc-1auj767-16 > .home__Text-sc-1auj767-9"));
     }
-    public static WebElement sairLogin()
-    {return waits.visibilityOfElement(By.id("btnExit"));
-}
-    public WebElement numberAccount(){
+
+    public static WebElement loginSairLogin() {
+        return waits.visibilityOfElement(By.id("btnExit"));
+    }
+
+    public WebElement loginNumberAccount() {
         return waits.visibilityOfElement((By.id("textAccountNumber")));
     }
-    public WebElement closeAccont(){ return waits.visibilityOfElement((By.id("btnCloseModal")));};
+
+    public WebElement loginCloseAccount() {
+        return waits.visibilityOfElement((By.id("btnCloseModal")));
+    };
 }
+
